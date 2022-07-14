@@ -1,3 +1,5 @@
+const { config } = require('dotenv')
+config();
 const express = require('express')
 const session = require('express-session')
 const routes = require('./controllers')
@@ -5,7 +7,7 @@ const sequelize = require('./config/connection');
 const passport = require('passport')
 const { User } = require('./models')
 
-const { config } = require('dotenv');
+
 const exphbs = require('express-handlebars');
 const path = require('path');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -45,7 +47,12 @@ app.use(routes);
 
 
 require('./db').sync()
-  .then(() => app.listen(process.env.PORT || 3001))
+  .then(() => {
+    console.log(`\x1b[45m    http://localhost:${PORT}   \x1b[0m`)
+    app.listen(process.env.PORT || 3001)
+
+  })
+
   .catch(err => console.log(err))
 
 
@@ -65,4 +72,4 @@ require('./db').sync()
 
 
 
-startLocalServer();
+// startLocalServer();

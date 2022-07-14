@@ -23,3 +23,5 @@ router.post('/users/login', (req, res) => {
     res.json(user ? jwt.sign({ id: user.id }, process.env.SECRET) : null)
   })
 })
+
+module.exports = router

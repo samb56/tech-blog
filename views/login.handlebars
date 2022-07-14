@@ -1,0 +1,33 @@
+<form id="loginForm">
+  <div class="h2"><u>Login Here</u></div>
+  <div class="mb-3">
+    <label for="loginUsername" class="form-label">Username</label>
+    <input type="text" class="form-control" id="loginUsernameInput" aria-describedby="emailHelp">
+    <div id="loginHelp" class="form-text">Be sure spelling is correct.</div>
+  </div>
+  <div class="mb-3">
+    <label for="LoginPasswordInput" class="form-label">Password</label>
+    <input type="password" class="form-control" id="loginPasswordInput">
+  </div>
+  
+  <button type="submit" id="loginSubmit" class="btn btn-primary">Log In</button>
+</form>
+
+<form id="registerForm">
+  <div class="h2"><u>Register Here</u></div>
+  <div class="mb-3">
+    <label for="registerUsernameInput" class="form-label">Pick A Username</label>
+    <input type="text" class="form-control" id="registerUsernameInput" aria-describedby="emailHelp">
+    <div id="loginHelp" class="form-text">Be sure spelling is correct.</div>
+  </div>
+  <div class="mb-3">
+    <label for="registerPasswordInput" class="form-label">Choose Password</label>
+    <input type="password" class="form-control" id="registerPasswordInput">
+  </div>
+
+  <button type="submit" id="registerSubmit" class="btn btn-primary">Create Account</button>
+</form>
+
+
+<script src="./js/login.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"></script>

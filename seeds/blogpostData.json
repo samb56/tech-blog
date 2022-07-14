@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Blog title 1",
+    "content": "sample sample sample sample sample.",
+    "user": "Ben"
+  },
+  {
+    "title": "Blog title 2",
+    "content": "test test test test test test.",
+    "user": "Leo"
+  },
+  {
+    "title": "Blog title 3",
+    "content": "real text real textreal textreal textreal textreal text",
+    "user": "Aki"
+  }
+]
