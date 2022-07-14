@@ -1,9 +1,11 @@
 const router = require('express').Router();
 const homeroutes = require('./home-routes')
 
+
+
 router.use('/', homeroutes)
 router.use('/api', require('./user-routes'))
-
+router.use('/api', require('./blog-routes'))
 
 //error message if wrong route was used
 router.use((req, res) => {

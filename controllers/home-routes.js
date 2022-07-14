@@ -24,7 +24,7 @@ router.get('/login', (req, res) => {
   res.render('login')
 })
 
-router.get('/dashboard', withAuth, async (req, res) => {
+router.get('/dashboard', async (req, res) => {
   const blogData = await
 
     res.render('dashboard',)

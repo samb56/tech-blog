@@ -6,17 +6,17 @@ const userData = require('./userData.json');
 const blogpostData = require('./blogpostData.json');
 
 
-const seedAll = async () => {
-  await sequelize.sync({ force: true });
+// const seedAll = async () => {
+//   await sequelize.sync({ force: true });
 
-  const users = await User.bulkCreate(userData, {
-    individualHooks: true,
-    returning: true,
-  });
+//   const users = await User.bulkCreate(userData, {
+//     individualHooks: true,
+//     returning: true,
+//   });
 
-  const blogs = await Blogpost.bulkCreate(blogpostData)
+//   const blogs = await Blogpost.bulkCreate(blogpostData)
 
-  process.exit(0);
-};
+//   process.exit(0);
+// };
 
-seedAll();
+// seedAll();
