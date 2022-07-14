@@ -9,7 +9,7 @@ const blogpostHandler = async (event) => {
     content: document.getElementById('blogContentInput').value
   }
   console.log(newPost)
-  axios.post('/api/users/register', newPost)
+  axios.post('/api/blog', newPost)
     .then(res => {
       console.log(res)
 

@@ -5,6 +5,7 @@
     "seed": "node seeds/seed.js"
   },
   "dependencies": {
+    "@nestjs/passport": "github:nestjs/passport",
     "bcrypt": "^5.0.1",
     "bootstrap": "^5.2.0-beta1",
     "connect-session-sequelize": "^7.1.4",
