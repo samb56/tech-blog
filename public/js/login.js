@@ -5,37 +5,54 @@
 
 const registerHandler = async (event) => {
   event.preventDefault()
-  // const username = document.getElementById('registerUsernameInput').value
-  // const password = document.getElementById('registerPasswordInput').value
+  const usernameInput = document.getElementById('registerUsernameInput').value
+  const passwordInput = document.getElementById('registerPasswordInput').value
 
-  let newUser = {
-    username: document.getElementById('registerUsernameInput').value,
-    password: document.getElementById('registerPasswordInput').value
+  // let newUser = {
+  //   username: document.getElementById('registerUsernameInput').value,
+  //   password: document.getElementById('registerPasswordInput').value
+  // }
+
+  const response = await fetch('/api/user', {
+    method: 'POST',
+    body: JSON.stringify({
+      username: usernameInput,
+      password: passwordInput,
+    }),
+    headers: { 'content-type': 'application/json' }
+  })
+  if (response.ok) {
+    document.location.replace('/dashboard');
+  } else {
+    alert('registration of account failed');
   }
-  console.log(newUser)
-  axios.post('/api/users/register', newUser)
-    .then(res => {
-      console.log(res)
-      window.location = '/'
-    })
 }
 
 
 const loginHandler = async (event) => {
   event.preventDefault()
 
-  let loginUser = {
-    username: document.getElementById('loginUsernameInput').value,
-    password: document.getElementById('loginPasswordInput').value
+
+  const usernameLogin = document.getElementById('loginUsernameInput').value
+  const passwordLogin = document.getElementById('loginPasswordInput').value
+
+  console.log(usernameLogin)
+  console.log(passwordLogin)
+  const response = await fetch('/api/user/login', {
+    method: 'POST',
+    body: JSON.stringify({
+      username: usernameEl.value,
+      password: passwordEl.value,
+    }),
+    headers: { 'Content-Type': 'application/json' },
+  });
+
+  if (response.ok) {
+    document.location.replace('/dashboard');
+  } else {
+    alert('Failed to login');
   }
-  console.log(loginUser)
-  axios.post('/api/users/login', loginUser)
-    .then(res => {
-      console.log(res.data)
-      let token = res.data
-      localStorage.setItem('token', res.data)
-      window.location = '/'
-    })
+
 }
 
 //------------------------ SUBMIT BUTTON QUERY SELECTORS ----------------------------------//
