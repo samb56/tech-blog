@@ -41,8 +41,8 @@ const loginHandler = async (event) => {
   const response = await fetch('/api/user/login', {
     method: 'POST',
     body: JSON.stringify({
-      username: usernameEl.value,
-      password: passwordEl.value,
+      username: usernameLogin,
+      password: passwordLogin,
     }),
     headers: { 'Content-Type': 'application/json' },
   });
